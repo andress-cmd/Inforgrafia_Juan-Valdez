@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Juan Valdez Café | Estructura organizacional</title>
+<style>
+:root{--bg:#eee5d5;--card:#fffaf0;--ink:#24251f;--mut:#6b655b;--line:#e4d7c0;--h:#173d2d;--c:#44271c;--tag:#f1eadb;--top:#efe2cb;--red:#b51f2a;--gold:#c49a62;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16130f;--card:#221d17;--ink:#efe6d6;--mut:#b5a994;--line:#3a3226;--h:#9fd0b0;--c:#e6c9a0;--tag:#31291f;--top:#2d261c;--red:#e0626b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#16130f;--card:#221d17;--ink:#efe6d6;--mut:#b5a994;--line:#3a3226;--h:#9fd0b0;--c:#e6c9a0;--tag:#31291f;--top:#2d261c;--red:#e0626b;color-scheme:dark}
+*{box-sizing:border-box}html{background:var(--bg);scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:Georgia,serif;margin:0}
+.hero{background:linear-gradient(120deg,#2b1a13,#4a2a1b 58%,#1b3d2b);color:#f7efdf;padding:44px 20px 52px}
+.in{max-width:1100px;margin:auto}
+.eye{text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;font-weight:800;color:#e9c99a}
+.hero h1{font-size:clamp(2.3rem,7vw,4.6rem);line-height:1;margin:10px 0 12px;letter-spacing:-.03em}
+.hero h1 span{color:#e9c99a}
+.hero p{margin:0;max-width:720px;font-size:clamp(1rem,2.2vw,1.2rem)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.tags span{border:1px solid #ffffff48;border-radius:99px;padding:6px 12px;font-size:.82rem}
+main{max-width:1100px;margin:-22px auto 0;padding:0 16px 40px;position:relative}
+section{margin:26px 0}
+.lab{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:var(--red)}
+h2{font-size:clamp(1.4rem,3.2vw,2rem);color:var(--h);margin:4px 0 6px}
+.sub{color:var(--mut);margin:0 0 14px;max-width:700px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
+.ov{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+.ov h3{color:var(--c);font-size:1.3rem;margin:4px 0 8px}
+.ov p{margin:0}
+.stat{background:#173d2d;color:#f7efdf;border-radius:20px;padding:22px}
+.stat .n{font:700 clamp(2.8rem,8vw,4.4rem)/1 Georgia,serif;color:#f3d5a2}
+.stat b.c{display:block;margin:6px 0 12px}
+.stat .sp{display:flex;gap:8px;flex-wrap:wrap}
+.stat .sp span{background:#ffffff1a;border:1px solid #ffffff30;border-radius:12px;padding:8px 12px;font-size:.92rem}
+.note{font-size:.84rem;color:var(--mut);margin-top:10px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.step i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-style:normal;font-weight:900;margin-bottom:10px}
+.step:nth-child(even) i{background:#28543b}
+.step h3{font-size:1rem;color:var(--c);margin-bottom:6px}
+.step p{margin:0;font-size:.9rem;color:var(--mut)}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px}
+.ctl button{font:inherit;font-weight:700;font-size:.86rem;border:1px solid var(--line);background:var(--card);color:var(--h);padding:8px 13px;border-radius:99px;cursor:pointer}
+.ctl button[aria-pressed="true"]{background:#173d2d;color:#fff;border-color:#173d2d}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.dep{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.dep[hidden]{display:none}
+.top{background:var(--top);padding:15px 18px;border-bottom:1px solid var(--line)}
+.top h3{color:var(--c);font-size:1.2rem}
+.top small{color:var(--mut)}
+.bd{padding:16px 18px;display:grid;gap:14px}
+.t,.r{border-left:3px solid var(--gold);padding-left:12px}
+.r{border-color:var(--red)}
+.bd b{display:block;font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--h);margin-bottom:3px}
+.r b{color:var(--red)}
+.bd p{margin:0;font-size:.92rem}
+.tag{display:inline-block;margin-top:7px;background:var(--tag);color:var(--mut);border-radius:7px;padding:3px 8px;font-size:.74rem;font-weight:700}
+.mx{margin-top:14px;padding:15px 18px;border-radius:14px;background:var(--top);border:1px solid var(--line)}
+.mx b{color:var(--red)}
+.mx p{margin:4px 0 0;font-size:.92rem}
+.val{background:#173d2d;color:#f7efdf;border-radius:20px;padding:22px}
+.val h2{color:#f7efdf}.val .sub{color:#d3dfd0}.val .lab{color:#e9c99a}
+.lead{max-width:540px;margin:0 auto 16px;text-align:center;background:#b51f2a;border-radius:14px;padding:12px 16px;font-weight:800}
+.lead small{display:block;font-weight:400;font-size:.82rem;color:#ffe8d1}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.col{background:#f9f1e2;color:#24251f;border-radius:16px;padding:16px}
+.col h3{color:#173d2d;font-size:1.15rem}
+.col>p{margin:2px 0 12px;font-size:.84rem;color:#6b655b}
+.it{background:#fffaf0;border:1px solid #e4d7c0;border-radius:12px;padding:10px 12px;margin-top:8px}
+.it b{display:block;color:#44271c;font-size:.92rem}
+.it span{font-size:.82rem;color:#5a554b}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.cr{display:flex;gap:12px;padding:12px;border-radius:12px;background:var(--tag);margin-top:10px}
+.cr i{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#28543b;color:#fff;font-style:normal;font-weight:900}
+.cr.k i{background:#b51f2a}
+.cr p{margin:0;font-size:.92rem}
+.cr strong{color:var(--h)}.cr.k strong{color:var(--red)}
+.refs{font-size:.86rem;color:var(--mut)}
+.refs p{margin:0 0 8px;padding-left:1.6em;text-indent:-1.6em}
+@media(max-width:700px){.ov{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="in">
+<div class="eye">Administración de empresas · Caso colombiano</div>
+<h1>JUAN VALDEZ <span>CAFÉ</span></h1>
+<p>¿Cómo se organiza para llegar al consumidor? Estructura, departamentalización y cadena de valor, contrastadas con la teoría.</p>
+<div class="tags"><span>Procafecol S. A.</span><span>Teoría vs. realidad</span><span>Lectura UVEG</span><span>Antología UIN</span></div>
+</div></header>
+<main>
+<section class="ov">
+<div class="card"><div class="lab">La empresa real</div><h3>Una marca, varios canales</h3>
+<p>Juan Valdez es una marca comercial operada por Promotora de Café Colombia S. A. (Procafecol S. A.). Su actividad abarca tiendas de café, productos de consumo masivo, clientes institucionales y mercados internacionales.</p>
+<p class="note">Este análisis describe funciones y canales que se identifican en los informes públicos. No reproduce un organigrama interno oficial.</p></div>
+<aside class="stat"><div class="lab" style="color:#e9c99a">Primer semestre de 2025</div><div class="n">643</div><b class="c">tiendas activas</b>
+<div class="sp"><span><b>374</b> en Colombia</span><span><b>269</b> en el exterior</span></div></aside>
+</section>
+
+<section>
+<div class="lab">Del café al consumidor</div><h2>Cómo se articulan los procesos</h2>
+<p class="sub">Cada etapa depende de la anterior. Si una falla, se nota en la tienda.</p>
+<div class="steps">
+<div class="step"><i>1</i><h3>Abastecer café e insumos</h3><p>Compra de café, insumos y materiales para la producción y las tiendas.</p></div>
+<div class="step"><i>2</i><h3>Comercial y mercadeo</h3><p>Desarrollo de marca, gestión de canales y promoción.</p></div>
+<div class="step"><i>3</i><h3>Operar tiendas</h3><p>Estándares de calidad y experiencia de servicio del consumidor.</p></div>
+<div class="step"><i>4</i><h3>Distribuir por canal</h3><p>Inventarios y logística hacia tiendas, grandes superficies y exterior.</p></div>
+<div class="step"><i>5</i><h3>Medir resultados</h3><p>Ventas, costos y experiencia del cliente para mejorar de forma continua.</p></div>
+</div>
+<p class="note">Secuencia analítica. No es una descripción certificada de los procedimientos internos.</p>
+</section>
+
+<section>
+<div class="lab">Diseño organizacional</div><h2>Departamentalización: teoría vs. realidad</h2>
+<p class="sub">Filtra por tipo. Cada tarjeta separa la definición teórica de lo que muestran los informes.</p>
+<div class="ctl" role="group" aria-label="Filtrar por tipo">
+<button data-f="all" aria-pressed="true">Todas</button><button data-f="fun" aria-pressed="false">Funcional</button><button data-f="pro" aria-pressed="false">Productos</button><button data-f="cli" aria-pressed="false">Clientes</button><button data-f="geo" aria-pressed="false">Geográfica</button><button data-f="prc" aria-pressed="false">Proceso</button>
+</div>
+<div class="grid">
+<article class="dep" data-k="fun"><div class="top"><h3>Funcional</h3><small>Garza (2000)</small></div><div class="bd">
+<div class="t"><b>Teoría</b><p>Agrupa las tareas por similitud de funciones. Da alta especialización, pero cada departamento puede ignorar lo que hacen los demás.</p></div>
+<div class="r"><b>Juan Valdez</b><p>Hay funciones comerciales y de mercadeo, operación de tiendas y áreas de apoyo como finanzas, talento humano y tecnología.</p><span class="tag">Compatible con lo descrito</span></div></div></article>
+<article class="dep" data-k="pro"><div class="top"><h3>Por productos</h3><small>Universidad Tecnológica de México (2005)</small></div><div class="bd">
+<div class="t"><b>Teoría</b><p>Divide la organización por líneas de producción, cada una con su responsable. Acelera el crecimiento y puede duplicar tareas administrativas.</p></div>
+<div class="r"><b>Juan Valdez</b><p>Ofrece tiendas y productos de consumo masivo, pero los informes consultados no confirman divisiones independientes por producto.</p><span class="tag">No confirmado</span></div></div></article>
+<article class="dep" data-k="cli"><div class="top"><h3>Por clientes</h3><small>Garza (2000)</small></div><div class="bd">
+<div class="t"><b>Teoría</b><p>Crea un departamento especializado por tipo de cliente. Atiende a la medida, aunque puede generar gastos extra.</p></div>
+<div class="r"><b>Juan Valdez</b><p>Reporta canales de tiendas, consumo masivo, institucional e internacional.</p><span class="tag">Canales identificables</span></div></div></article>
+<article class="dep" data-k="geo"><div class="top"><h3>Geográfica</h3><small>Robbins y Coulter (2005)</small></div><div class="bd">
+<div class="t"><b>Teoría</b><p>Organiza por territorios para acercarse al cliente y facilitar la logística. Exige más personal administrativo de control.</p></div>
+<div class="r"><b>Juan Valdez</b><p>Distingue el mercado nacional del internacional, con tiendas y distribución en varios países.</p><span class="tag">Presencia en varios territorios</span></div></div></article>
+<article class="dep" data-k="prc"><div class="top"><h3>Por proceso</h3><small>Garza (2000)</small></div><div class="bd">
+<div class="t"><b>Teoría</b><p>Divide las actividades según los procesos productivos. Optimiza cada proceso, aunque las áreas se comunican poco entre sí.</p></div>
+<div class="r"><b>Juan Valdez</b><p>La cadena analítica reúne abastecimiento, mercadeo, operación de tiendas, distribución y medición.</p><span class="tag">Modelo ilustrativo</span></div></div></article>
+</div>
+<div class="mx"><b>¿Estructura matricial?</b><p>Con la información pública consultada no se puede afirmar. Haría falta evidencia de doble autoridad formal, por ejemplo equipos que respondan a la vez a un responsable funcional y a uno de producto.</p></div>
+<p class="note">La teoría proviene de la lectura de la UVEG (Cruz, Mendoza y Ramírez, 2014).</p>
+</section>
+
+<section>
+<div class="lab">Segundo marco teórico</div><h2>La estructura en cinco de Mintzberg</h2>
+<p class="sub">Mintzberg (1979), según Garrido (2017), describe cinco partes de una organización. No todas aparecen de la misma forma en cada empresa.</p>
+<div class="steps">
+<div class="step"><i>1</i><h3>Cumbre estratégica</h3><p><strong>Teoría:</strong> la dirección y las autoridades principales. Definen objetivos y la relación con el entorno.</p><p><strong>Juan Valdez:</strong> dirección y estrategia, que fija posicionamiento y crecimiento.</p></div>
+<div class="step"><i>2</i><h3>Línea media</h3><p><strong>Teoría:</strong> gerentes y supervisores entre la dirección y el núcleo operativo. Asignan las actividades.</p><p><strong>Juan Valdez:</strong> gerencias de canal y supervisión de tiendas.</p><span class="tag">Lectura analítica, no verificada</span></div>
+<div class="step"><i>3</i><h3>Tecnoestructura</h3><p><strong>Teoría:</strong> estandariza los procesos de trabajo y los controla. Recursos humanos forma parte de ella.</p><p><strong>Juan Valdez:</strong> estándares de servicio, sistemas y gestión del talento.</p><span class="tag">Lectura analítica, no verificada</span></div>
+<div class="step"><i>4</i><h3>Núcleo de operaciones</h3><p><strong>Teoría:</strong> quienes producen o prestan el servicio. Sostienen a la organización.</p><p><strong>Juan Valdez:</strong> equipos de tienda y de abastecimiento y distribución.</p></div>
+<div class="step"><i>5</i><h3>Personal de apoyo</h3><p><strong>Teoría:</strong> unidades que prestan servicios sin pertenecer a la estructura operacional, como la seguridad.</p><p><strong>Juan Valdez:</strong> servicios de soporte a las tiendas, que pueden ser externos.</p><span class="tag">No verificado</span></div>
+</div>
+<div class="mx"><b>¿Qué configuración se parece más?</b><p>Mintzberg propone cinco: estructura simple, burocracia mecánica, burocracia profesional, forma divisionista y adhocracia. Una cadena de tiendas con servicio estandarizado se acerca a la burocracia mecánica, cuya base es la estandarización de procesos. Su operación por canales recuerda a la forma divisionista. Es una lectura analítica: los informes consultados no permiten confirmarla.</p></div>
+</section>
+
+<section class="val">
+<div class="lab">Creación de valor</div><h2>Cadena de valor</h2>
+<p class="sub">Kotler y Armstrong (2008, p. 46) plantean que el éxito depende de cómo se coordinan todos los departamentos, además de lo que haga cada uno.</p>
+<div class="lead">Dirección y estrategia<small>Define objetivos, posicionamiento y crecimiento, y orienta a las demás áreas.</small></div>
+<div class="cols">
+<div class="col"><h3>Áreas sustantivas</h3><p>Generan el valor principal para el cliente.</p>
+<div class="it"><b>Operación de tiendas</b><span>Servicio y experiencia del consumidor.</span></div>
+<div class="it"><b>Abastecimiento y distribución</b><span>Compra de café, inventarios y logística.</span></div>
+<div class="it"><b>Comercial y mercadeo</b><span>Marca, productos y canales.</span></div></div>
+<div class="col"><h3>Áreas adjetivas o de apoyo</h3><p>Dan recursos y soporte a toda la organización.</p>
+<div class="it"><b>Finanzas</b><span>Gestión de recursos y control de costos.</span></div>
+<div class="it"><b>Talento humano</b><span>Administración y desarrollo de las personas.</span></div>
+<div class="it"><b>Tecnología</b><span>Sistemas de información y soporte.</span></div></div>
+</div>
+<p class="note" style="color:#d3dfd0">Clasificación de análisis académico. No es una declaración oficial de Procafecol S. A.</p>
+</section>
+
+<section class="two">
+<div class="card"><div class="lab">Lectura crítica</div><h2>Fortaleza y reto</h2>
+<div class="cr"><i>✓</i><p><strong>Fortaleza:</strong> varios canales amplían la cobertura y llegan a segmentos distintos.</p></div>
+<div class="cr k"><i>!</i><p><strong>Reto:</strong> coordinar inventarios, estándares de servicio, costos logísticos y consistencia de marca entre canales y países.</p></div></div>
+<div class="card"><div class="lab">Conclusión</div><h2>Coordinar las áreas</h2>
+<p>Juan Valdez muestra rasgos funcionales, por canales o clientes y geográficos. Dividir el trabajo no basta: las áreas también tienen que coordinarse y compartir información.</p>
+<p class="note">Separar lo que dice la teoría de lo que muestran los informes evita presentar suposiciones como hechos.</p></div>
+</section>
+
+<section class="card refs">
+<div class="lab">Referencias</div>
+<p style="margin-top:8px"><b>Empresa.</b> Procafecol S. A. (2025). <i>Informe periódico trimestral, segundo trimestre de 2025</i>. Procafecol S. A. (2024). <i>Informe de gestión integrado 2024</i>. Juan Valdez. https://www.juanvaldez.com</p>
+<p>Cruz, I., Mendoza, M. de la L., y Ramírez, O. (2014). <i>Estructura jerárquica de una organización</i> [Lectura]. Universidad Virtual del Estado de Guanajuato.</p>
+<p>Garrido, I. (2017). <i>El modelo Mintzberg, una organización estructurada en la empresa</i>. http://empresas.infoempleo.com/hrtrends/modelo-mintzberg-una-organizacion-estructurada-la-empresa</p>
+<p>Garza, J. G. (2000). <i>Administración contemporánea</i> (2.ª ed.). McGraw-Hill.</p>
+<p>Kotler, P., y Armstrong, G. (2008). <i>Fundamentos de marketing</i> (8.ª ed.). Prentice Hall.</p>
+<p>Robbins, S., y Coulter, M. (2005). <i>Administración</i> (8.ª ed.). Prentice Hall.</p>
+<p>Universidad Insurgentes. (s. f.). <i>Diagnóstico organizacional</i> [Antología, Bloque 4, EEGCA0620]. Estructuras empresariales y gestión del conocimiento.</p>
+<p>Universidad Tecnológica de México. (2005). <i>Administración</i> (5.ª ed.). Instituto de Investigación de Tecnología Educativa de la Universidad Tecnológica de México.</p>
+</section>
+</main>
+<script>
+var b=document.querySelectorAll('.ctl button'),d=document.querySelectorAll('.dep');
+b.forEach(function(x){x.addEventListener('click',function(){
+b.forEach(function(y){y.setAttribute('aria-pressed',String(y===x))});
+d.forEach(function(c){c.hidden=x.dataset.f!=='all'&&c.dataset.k!==x.dataset.f});
+})});
+</script>
+</body>
+</html>
